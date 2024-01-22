@@ -3,10 +3,10 @@ import { Loader2 } from "lucide-react";
 
 export const Loader = ({
   size,
-  classname,
+  className,
 }: {
   size?: number;
-  classname?: string;
+  className?: string;
 }) => {
-  return <Loader2 className={clsx("animate-spin", classname)} size={size} />;
+  return <Loader2 className={clsx("animate-spin", className)} size={size} />;
 };
