@@ -6,7 +6,7 @@ import { Typography } from "../ui/Typography";
 export const Footer = () => {
   return (
     <footer className="w-full border-t border-card">
-      <div className="m-auto w-full max-w-3xl px-2 py-4">
+      <div className="w-full max-w-3xl px-2 py-4 m-auto">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
           <div className="flex flex-row items-center gap-2">
             <Image
@@ -34,7 +34,7 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="flex w-full items-center justify-center">
+        <div className="flex items-center justify-center w-full">
           <Typography variant="base" className="text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} YouCode
           </Typography>

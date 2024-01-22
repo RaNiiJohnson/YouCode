@@ -1,7 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getAuthSession } from "@/lib/auth";
 import { notFound } from "next/navigation";
-import React from "react";
 
 export default async function page() {
   const session = await getAuthSession();
