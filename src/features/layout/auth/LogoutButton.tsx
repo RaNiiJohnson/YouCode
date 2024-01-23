@@ -1,24 +1,26 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/loader";
 import { useMutation } from "@tanstack/react-query";
-import { LogIn } from "lucide-react";
-import { signIn } from "next-auth/react";
+import { LogOut } from "lucide-react";
+import { signOut } from "next-auth/react";
 
-export const LoginButton = () => {
+export default function LogoutButton() {
   const mutation = useMutation({
-    mutationFn: async () => signIn(),
+    mutationFn: async () => signOut(),
   });
+
   return (
     <div>
-      <Button onClick={() => mutation.mutate()} size="sm" variant="outline">
+      <Button onClick={() => mutation.mutate()} size="sm" variant="destructive">
         {mutation.isPending ? (
           <Loader size={12} className="mr-2" />
         ) : (
-          <LogIn size={12} className="mr-2" />
+          <LogOut size={12} className="mr-2" />
         )}
-        Login
+        Logout
       </Button>
     </div>
   );
-};
+}

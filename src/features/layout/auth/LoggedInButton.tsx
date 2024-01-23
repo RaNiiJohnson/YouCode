@@ -17,10 +17,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Loader } from "@/components/ui/loader";
 import { AlertDialogTrigger } from "@radix-ui/react-alert-dialog";
+import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { useMutation } from "@tanstack/react-query";
-import { LogOut, LogOutIcon } from "lucide-react";
+import { LogOut, LogOutIcon, User2 } from "lucide-react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 export type LoggedInButtonProps = {
   user: Session["user"];
@@ -48,6 +50,13 @@ export const LoggedInButton = (props: LoggedInButtonProps) => {
       </DropdownMenuTrigger>
       <AlertDialog>
         <DropdownMenuContent>
+          <DropdownMenuItem asChild>
+            <Link href="/account">
+              <User2 size={12} className="mr-2" />
+              Account
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
           <AlertDialogTrigger asChild>
             <DropdownMenuItem>
               <LogOut className="mr-2" size={12} />

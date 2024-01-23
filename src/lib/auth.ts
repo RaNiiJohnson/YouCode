@@ -17,3 +17,14 @@ export const getAuthSession = async (
   const session = await getServerSession(...parameters, authOptions);
   return session;
 };
+export const getRequiredAuthSession = async (
+  ...parameters: ParametersGetServerSession
+) => {
+  const session = await getAuthSession();
+
+  if (!session) {
+    throw new Error("no session");
+  }
+
+  return session;
+};
