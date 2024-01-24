@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import LogoutButton from "@/features/layout/auth/LogoutButton";
+import LogoutButton from "@/features/auth/LogoutButton";
 import { getRequiredAuthSession } from "@/lib/auth";
 import Link from "next/link";
 

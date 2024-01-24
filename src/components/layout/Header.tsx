@@ -1,9 +1,9 @@
 import { SiteConfig } from "@/lib/site-config";
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from "../../components/ThemeToggle";
-import { Typography } from "../../components/ui/Typography";
-import { AuthButton } from "./auth/AuthButton";
+import { AuthButton } from "../../features/auth/AuthButton";
+import { ThemeToggle } from "../ThemeToggle";
+import { Typography } from "../ui/Typography";
 
 export async function Header() {
   return (

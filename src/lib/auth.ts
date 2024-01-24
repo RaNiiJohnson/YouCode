@@ -22,9 +22,16 @@ export const getRequiredAuthSession = async (
 ) => {
   const session = await getAuthSession();
 
-  if (!session) {
+  if (!session?.user.id) {
     throw new Error("no session");
   }
 
-  return session;
+  return session as {
+    user: {
+      id: string;
+      email?: string;
+      image?: string;
+      name?: string;
+    };
+  };
 };
